@@ -76,31 +76,24 @@ select, .search input {
 /* ===== Carrossel ===== */
 .carousel {
   position: relative;
-  width: 95%;
-  max-width: 1200px; /* um pouco mais largo */
-  aspect-ratio: 16 / 6; /* 🔹 ajustado à proporção da sua imagem */
-  margin: 40px auto;
+  max-width: 1400px;   /* largura máxima do carrossel */
+  margin: 40px auto;  /* centraliza na página */
   overflow: hidden;
   border-radius: 10px;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #000;
 }
 
 .carousel-container {
   display: flex;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.5s ease;
 }
 
 .carousel-container img {
-  width: 100%;
-  height: 100%;
-  flex-shrink: 0;
-  object-fit: cover; /* 🔹 mantém o enquadramento cinematográfico */
-  border-radius: 10px;
+  width: 100%;          /* imagem ocupa toda a largura do carrossel */
+  max-width: 1400px;     /* limite máximo de largura */
+  height: 500px;        /* altura fixa */
+  object-fit: cover;    /* preenche o espaço sem distorcer */
+  flex-shrink: 0;       /* impede que a imagem encolha */
 }
 
 /* ===== Botões ===== */
@@ -268,4 +261,48 @@ footer a:hover {
     flex-direction: column;
     gap: 15px;
   }
+}
+.cinemas-list {
+  display: flex;
+  justify-content: center;   /* centraliza os cards */
+  flex-wrap: wrap;           /* quebra linha se houver muitos */
+  gap: 20px;                 /* espaçamento entre os cinemas */
+  margin-top: 20px;
+}
+
+.cinemas-list .card {
+  background-color: #20223d;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 600px;              /* largura do card (ajuste como quiser) */
+  padding: 40px;
+  transition: transform 0.3s;
+}
+
+.cinemas-list .card img {
+  width: 100%;               /* imagem ocupa toda a largura do card */
+  height: 300px;             /* altura fixa para padronizar */
+  object-fit: cover;         /* corta sem distorcer */
+  border-radius: 10px;
+}
+
+.cinemas-list .card p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.cinemas-list .card button {
+  background-color: #ff6600;
+  color: #eeecec;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cinemas-list .card button:hover {
+  background-color: #cc5200;
 }
