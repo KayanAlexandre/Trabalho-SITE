@@ -306,3 +306,22 @@ footer a:hover {
 .cinemas-list .card button:hover {
   background-color: #cc5200;
 }
+/* ===== Título do filme no carrossel (estilizado) ===== */
+.carousel-title {
+  position: absolute;
+  top: 15px;              /* canto superior */
+  left: 15px;             /* canto esquerdo */
+  color: #ffffff;         /* branco */
+  font-weight: bold;
+  font-size: 2rem;        /* um pouco maior */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;   /* evita interferir com clique nas setas */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* sombra para legibilidade */
+}
+
+/* Mostra o título apenas quando o mouse está sobre o carrossel */
+.carousel:hover .carousel-title {
+  opacity: 1;
+}
+
