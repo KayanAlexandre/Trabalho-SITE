@@ -3,11 +3,13 @@ const container = document.querySelector('.carousel-container');
 const images = document.querySelectorAll('.carousel-container img');
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
+const title = document.querySelector('.carousel-title'); // adiciona o título
 
 let index = 0;
 
 function showImage() {
   container.style.transform = `translateX(${-index * 100}%)`;
+  title.textContent = images[index].dataset.title; // atualiza nome do filme
 }
 
 next.addEventListener('click', () => {
@@ -25,5 +27,8 @@ setInterval(() => {
   index = (index + 1) % images.length;
   showImage();
 }, 4000);
+
+// Inicializa com o primeiro filme
+showImage();
 
 
